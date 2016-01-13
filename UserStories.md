@@ -15,5 +15,5 @@ Sprint 3:
 -I want to be able to buy/sell items
 -I want to be able to pay online (liability issues?)
 -I want to be able to negotiate in direct instant messages on the site
--I want to be able to sort items by people's ratings
+-I want to be able to sort items by people's ratings 
 -I want to be able to get email updates about matches
