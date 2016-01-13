@@ -23,6 +23,7 @@ Sprint 2:
 
 
 Sprint 3:
+
 -I want to be able to buy/sell items
 
 -I want to be able to pay online (liability issues?)
