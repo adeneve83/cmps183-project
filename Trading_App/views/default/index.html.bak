@@ -1,0 +1,22 @@
+{{extend 'layout.html'}}
+
+
+
+<html>
+   <h2>Welcome to Thingder!</h2>
+    <br>
+    <h3>Item posts</h3>
+    <table class="table">
+        {{for row in rows:}}
+        <tr>
+            <td><a href="{{=URL('show',args=row.id)}}">{{=row.title}}</a></td>
+            <td>{{=row.author}}</td>
+            <td>{{=row.time_stamp}}</td>
+            <td>{{=row.interests}}</td>
+            <td>{{=row.offers}}</td>
+            <td><img src="/Trading_App/uploads/args=row.image" /></td>
+        </tr>
+        {{pass}}
+    </table>
+    
+</html>

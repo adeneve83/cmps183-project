@@ -1,0 +1,963 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.Exception'> Validation error, field:title <class 'gluon.validators.IS_NOT_EMPTY'>"
+p3
+sS'layer'
+p4
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\applications\\Trading_App\\controllers/default.py'
+p5
+sS'code'
+p6
+S'# -*- coding: utf-8 -*-\n# this file is released under public domain and you can use without limitations\n\n#########################################################################\n## This is a sample controller\n## - index is the default action of any application\n## - user is required for authentication and authorization\n## - download is for downloading files uploaded in the db (does streaming)\n#########################################################################\n\ndef index():\n    \n    rows = db(db.posts).select()\n\n    #if form.accepted:\n        #redirect(URL(\'other\', vars={ \'your_name\':form.vars.your_name}))\n    return locals()\n\n#@auth.requires_login()\ndef create():\n    db.posts.time_stamp.default = request.now\n    db.posts.time_stamp.writable = False\n    db.posts.time_stamp.readable = False\n    form = SQLFORM(db.posts).process()\n    if form.accepted: redirect(URL(\'index\'))\n    return locals()\n\ndef show():\n    post = db.posts(request.args(0, cast=int))\n    return locals()\ndef other():\n    #add sql data entry form in this page.. maybe some flash messages\n    message = \'Welcome %s\' % request.vars.your_name\n    return locals()\n\ndef user():\n    """\n    exposes:\n    http://..../[app]/default/user/login\n    http://..../[app]/default/user/logout\n    http://..../[app]/default/user/register\n    http://..../[app]/default/user/profile\n    http://..../[app]/default/user/retrieve_password\n    http://..../[app]/default/user/change_password\n    http://..../[app]/default/user/bulk_register\n    use @auth.requires_login()\n        @auth.requires_membership(\'group name\')\n        @auth.requires_permission(\'read\',\'table name\',record_id)\n    to decorate functions that need access control\n    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users\n    """\n    return dict(form=auth())\n\n\n@cache.action()\ndef download():\n    """\n    allows downloading of uploaded files\n    http://..../[app]/default/download/[filename]\n    """\n    return response.download(request, db)\n\n\ndef call():\n    """\n    exposes services. for example:\n    http://..../[app]/default/call/jsonrpc\n    decorate with @services.jsonrpc the functions to expose\n    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv\n    """\n    return service()\n\nresponse._vars=response._caller(create)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.Exception object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.Exception object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.Exception object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.Exception object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.Exception object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.Exception object>'
+p23
+sS'__reduce__'
+p24
+S'<built-in method __reduce__ of exceptions.Exception object>'
+p25
+sS'__str__'
+p26
+S"<method-wrapper '__str__' of exceptions.Exception object>"
+p27
+sS'__format__'
+p28
+S'<built-in method __format__ of exceptions.Exception object>'
+p29
+sS'__getattribute__'
+p30
+S"<method-wrapper '__getattribute__' of exceptions.Exception object>"
+p31
+sS'__class__'
+p32
+S"<type 'exceptions.Exception'>"
+p33
+sS'__unicode__'
+p34
+S'<built-in method __unicode__ of exceptions.Exception object>'
+p35
+sS'__delattr__'
+p36
+S"<method-wrapper '__delattr__' of exceptions.Exception object>"
+p37
+sS'__subclasshook__'
+p38
+S'<built-in method __subclasshook__ of type object>'
+p39
+sS'__repr__'
+p40
+S"<method-wrapper '__repr__' of exceptions.Exception object>"
+p41
+sS'args'
+p42
+S'("Validation error, field:title <class \'gluon.validators.IS_NOT_EMPTY\'>",)'
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.Exception object>'
+p47
+sS'__doc__'
+p48
+S"'Common base class for all non-exit exceptions.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.Exception object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S"Validation error, field:title <class 'gluon.validators.IS_NOT_EMPTY'>"
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S's\xeaf\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>Trading_App</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-0ec965d0-6905-4b3f-9c30-7bf2d6492519<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_trading_app</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-aa211cf1-e33e-4015-b5f2-019d7e4be332<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_welcome</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-afd91a85-c3e1-403c-a80f-672201576b18<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">CONTENT_LENGTH</td><td style="vertical-align:top;">:</td><td><div>723</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">CONTENT_TYPE</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundarySVbD7hwinsPAwMTP</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CACHE_CONTROL</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONTENT_LENGTH</td><td style="vertical-align:top;">:</td><td><div>723</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONTENT_TYPE</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundarySVbD7hwinsPAwMTP</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=127.0.0.1-afd91a85-c3e1-403c-a80f-672201576b18; session_id_admin=127.0.0.1-0ec965d0-6905-4b3f-9c30-7bf2d6492519; session_id_trading_app=127.0.0.1-aa211cf1-e33e-4015-b5f2-019d7e4be332</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ORIGIN</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/Trading_App/default/create</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/Trading_App/default/create</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>50680</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>AndrewsPC</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;C:\\\\Users\\\\Andrew\\\\Desktop\\\\web2py serv\\\\web2py\\\\applications\\\\admin\\\\&#x27;, &#x27;C:\\\\Users\\\\Andrew\\\\Desktop\\\\web2py serv\\\\web2py\\\\applications\\\\Trading_App\\\\&#x27;, &#x27;C:\\\\Users\\\\Andrew\\\\Desktop\\\\web2py serv\\\\web2py\\\\applications\\\\welcome\\\\&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x2527760: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;AndrewsPC&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;C:\\\\Users\\\\Andrew\\\\Desktop\\\\web2py serv\\\\web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">content_length</td><td style="vertical-align:top;">:</td><td><div>723</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">content_type</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundarySVbD7hwinsPAwMTP</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cache_control</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_content_length</td><td style="vertical-align:top;">:</td><td><div>723</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_content_type</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundarySVbD7hwinsPAwMTP</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=127.0.0.1-afd91a85-c3e1-403c-a80f-672201576b18; session_id_admin=127.0.0.1-0ec965d0-6905-4b3f-9c30-7bf2d6492519; session_id_trading_app=127.0.0.1-aa211cf1-e33e-4015-b5f2-019d7e4be332</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_origin</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/Trading_App/default/create</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>fe80::5efe:10.0.1.16%9</div></td></tr><tr><td><div>2001:0:9d38:6ab8:3052:6b9f:5616:f5c6</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>10.0.1.16</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>fe80::3052:6b9f:5616:f5c6%7</div></td></tr><tr><td><div>AndrewsPC</div></td></tr><tr><td><div>fe80::e1ea:4ac2:ea52:c02f%3</div></td></tr><tr><td><div>AndrewsPC.ucsc.edu</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/Trading_App/default/create</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>50680</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/Trading_App/default/create</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>AndrewsPC</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.13.4-stable+timestamp.2015.12.26.04.59.39</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x0215D0D0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x0319D148&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x03DC3FB0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x0215D0D0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x0319D148&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x03DC3FB0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\applications\\Trading_App\\</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>create</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;C:\\\\Users\\\\Andrew\\\\Desktop\\\\web2py serv\\\\web2py\\\\applications\\\\admin\\\\&#x27;, &#x27;C:\\\\Users\\\\Andrew\\\\Desktop\\\\web2py serv\\\\web2py\\\\applications\\\\Trading_App\\\\&#x27;, &#x27;C:\\\\Users\\\\Andrew\\\\Desktop\\\\web2py serv\\\\web2py\\\\applications\\\\welcome\\\\&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x2527760: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;AndrewsPC&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;C:\\\\Users\\\\Andrew\\\\Desktop\\\\web2py serv\\\\web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>fe80::5efe:10.0.1.16%9</div></td></tr><tr><td><div>2001:0:9d38:6ab8:3052:6b9f:5616:f5c6</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>10.0.1.16</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>fe80::3052:6b9f:5616:f5c6%7</div></td></tr><tr><td><div>AndrewsPC</div></td></tr><tr><td><div>fe80::e1ea:4ac2:ea52:c02f%3</div></td></tr><tr><td><div>AndrewsPC.ucsc.edu</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.13.4-stable+timestamp.2015.12.26.04.59.39</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 1, 14, 11, 34, 18, 500000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/Trading_App/default/create</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 1, 14, 19, 34, 18, 500000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x0473CCD0&gt;</div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 04473608, file "C:\\User...ons\\Trading_App\\controllers/default.py", line 11>'
+p69
+ssS'lnum'
+p70
+I227
+sS'lines'
+p71
+(dp72
+I224
+S'            ccode = code'
+p73
+sI225
+S'        else:'
+p74
+sI226
+S'            ccode = compile2(code, layer)'
+p75
+sI227
+S'        exec ccode in environment'
+p76
+sI228
+S'    except HTTP:'
+p77
+sI229
+S'        raise'
+p78
+sI230
+S'    except RestrictedError:'
+p79
+sI231
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p80
+sI222
+S'    try:'
+p81
+sI223
+S'        if isinstance(code, types.CodeType):'
+p82
+ssS'call'
+p83
+S"(code='# -*- coding: utf-8 -*-\\n# this file is released ...rvice()\\n\\nresponse._vars=response._caller(create)\\n', environment={'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}, layer=r'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\applications\\Trading_App\\controllers/default.py')"
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\applications\\Trading_App\\controllers\\default.py'
+p88
+sg64
+(dp89
+sg70
+I73
+sg71
+(dp90
+I64
+S'def call():'
+p91
+sI65
+S'    """'
+p92
+sI66
+S'    exposes services. for example:'
+p93
+sI67
+S'    http://..../[app]/default/call/jsonrpc'
+p94
+sI68
+S'    decorate with @services.jsonrpc the functions to expose'
+p95
+sI69
+S'    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv'
+p96
+sI70
+S'    """'
+p97
+sI71
+S'    return service()'
+p98
+sI62
+S''
+sI63
+S''
+ssg83
+S'()'
+p99
+sg85
+S'<module>'
+p100
+sa(dp101
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\globals.py'
+p102
+sg64
+(dp103
+S'self'
+p104
+S'undefined'
+p105
+sS'f'
+S'<function create>'
+p106
+ssg70
+I412
+sg71
+(dp107
+I416
+S"        self.generic_patterns = ['*']"
+p108
+sI407
+S"        self.flash = ''            # used by the default view layout"
+p109
+sI408
+S'        self.meta = Storage()      # used by web2py_ajax.html'
+p110
+sI409
+S'        self.menu = []             # used by the default view layout'
+p111
+sI410
+S'        self.files = []            # used by web2py_ajax.html'
+p112
+sI411
+S'        self._vars = None'
+p113
+sI412
+S'        self._caller = lambda f: f()'
+p114
+sI413
+S'        self._view_environment = None'
+p115
+sI414
+S'        self._custom_commit = None'
+p116
+sI415
+S'        self._custom_rollback = None'
+p117
+ssg83
+S'(f=<function create>)'
+p118
+sg85
+S'<lambda>'
+p119
+sa(dp120
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\applications\\Trading_App\\controllers\\default.py'
+p121
+sg64
+(dp122
+S'global db'
+p123
+S'<DAL uri="sqlite://storage.sqlite">'
+p124
+sS'global SQLFORM'
+p125
+S"<class 'gluon.sqlhtml.SQLFORM'>"
+p126
+sS'db.posts'
+p127
+S'<Table posts (id,title,author,interests,offers,time_stamp)>'
+p128
+sS'form'
+p129
+g105
+sS').process'
+p130
+g105
+ssg70
+I24
+sg71
+(dp131
+I19
+S'#@auth.requires_login()'
+p132
+sI20
+S'def create():'
+p133
+sI21
+S'    db.posts.time_stamp.default = request.now'
+p134
+sI22
+S'    db.posts.time_stamp.writable = False'
+p135
+sI23
+S'    db.posts.time_stamp.readable = False'
+p136
+sI24
+S'    form = SQLFORM(db.posts).process()'
+p137
+sI25
+S"    if form.accepted: redirect(URL('index'))"
+p138
+sI26
+S'    return locals()'
+p139
+sI27
+S''
+sI28
+S'def show():'
+p140
+ssg83
+S'()'
+p141
+sg85
+S'create'
+p142
+sa(dp143
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py'
+p144
+sg64
+(dp145
+S'self'
+p146
+S'<gluon.sqlhtml.SQLFORM object>'
+p147
+sS'self.validate'
+p148
+S'<bound method SQLFORM.validate of <gluon.sqlhtml.SQLFORM object>>'
+p149
+sS'kwargs'
+p150
+S"{'dbio': True}"
+p151
+ssg70
+I2304
+sg71
+(dp152
+I2304
+S'        self.validate(**kwargs)'
+p153
+sI2305
+S'        return self'
+p154
+sI2306
+S''
+sI2307
+S'    REDIRECT_JS = "window.location=\'%s\';return false"'
+p155
+sI2308
+S''
+sI2299
+S''
+sI2300
+S''
+sI2301
+S'        """'
+p156
+sI2302
+S"        kwargs['dbio'] = kwargs.get('dbio', True)"
+p157
+sI2303
+S'                                    # necessary for SQLHTML forms'
+p158
+ssg83
+S"(self=<gluon.sqlhtml.SQLFORM object>, **kwargs={'dbio': True})"
+p159
+sg85
+S'process'
+p160
+sa(dp161
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py'
+p162
+sg64
+(dp163
+S'self'
+p164
+S'<gluon.sqlhtml.SQLFORM object>'
+p165
+sS'self.accepts'
+p166
+S'<bound method SQLFORM.accepts of <gluon.sqlhtml.SQLFORM object>>'
+p167
+sS'kwargs'
+p168
+S"{'dbio': True, 'request_vars': <Storage {'interests': 'PS4', 'title': 'Trading ...96e8-3afd9109fcb1', '_formname': 'posts/create'}>, 'session': <Storage {'_formkey[posts/create]': ['768d6a8a-7...ate]': ['370d231f-a463-4f12-a43d-67ac09e26bb1']}>}"
+p169
+ssg70
+I2241
+sg71
+(dp170
+I2240
+S''
+sI2241
+S'        if self.accepts(**kwargs):'
+p171
+sI2242
+S"            if onsuccess == 'flash':"
+p172
+sI2243
+S'                if next:'
+p173
+sI2244
+S'                    current.session.flash = message_onsuccess'
+p174
+sI2245
+S'                else:'
+p175
+sI2236
+S"        for key in ('message_onsuccess', 'message_onfailure', 'onsuccess',"
+p176
+sI2237
+S"                    'onfailure', 'next', 'message_onchange', 'onchange'):"
+p177
+sI2238
+S'            if key in kwargs:'
+p178
+sI2239
+S'                del kwargs[key]'
+p179
+ssg83
+S"(self=<gluon.sqlhtml.SQLFORM object>, **kwargs={'dbio': True, 'request_vars': <Storage {'interests': 'PS4', 'title': 'Trading ...96e8-3afd9109fcb1', '_formname': 'posts/create'}>, 'session': <Storage {'_formkey[posts/create]': ['768d6a8a-7...ate]': ['370d231f-a463-4f12-a43d-67ac09e26bb1']}>})"
+p180
+sg85
+S'validate'
+p181
+sa(dp182
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\sqlhtml.py'
+p183
+sg64
+(dp184
+S'kwargs'
+p185
+g45
+ssg70
+I1505
+sg71
+(dp186
+I1504
+S'            hideerror=hideerror,'
+p187
+sI1505
+S'            **kwargs'
+p188
+sI1506
+S'        )'
+p189
+sI1507
+S''
+sI1508
+S'        self.deleted = \\'
+p190
+sI1509
+S'            request_vars.get(self.FIELDNAME_REQUEST_DELETE, False)'
+p191
+sI1500
+S'            session,'
+p192
+sI1501
+S'            formname,'
+p193
+sI1502
+S'            keepvalues,'
+p194
+sI1503
+S'            onvalidation,'
+p195
+ssg83
+S"(self=<gluon.sqlhtml.SQLFORM object>, request_vars=<Storage {'interests': 'PS4', 'title': 'Trading ...96e8-3afd9109fcb1', '_formname': 'posts/create'}>, session=<Storage {'_formkey[posts/create]': ['768d6a8a-7...ate]': ['370d231f-a463-4f12-a43d-67ac09e26bb1']}>, formname='posts/create', keepvalues=False, onvalidation=None, dbio=True, hideerror=False, detect_record_change=False, **kwargs={})"
+p196
+sg85
+S'accepts'
+p197
+sa(dp198
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py'
+p199
+sg64
+(dp200
+S'status'
+p201
+S'True'
+p202
+sS'self'
+p203
+S'<gluon.sqlhtml.SQLFORM object>'
+p204
+sS'self._traverse'
+p205
+S'<bound method SQLFORM._traverse of <gluon.sqlhtml.SQLFORM object>>'
+p206
+sS'hideerror'
+p207
+S'False'
+p208
+ssg70
+I2122
+sg71
+(dp209
+I2117
+S'        if status and session:'
+p210
+sI2118
+S'            # check if editing a record that has been modified by the server'
+p211
+sI2119
+S"            if hasattr(self, 'record_hash') and self.record_hash != formkey.split(':')[0]:"
+p212
+sI2120
+S'                status = False'
+p213
+sI2121
+S'                self.record_changed = changed = True'
+p214
+sI2122
+S'        status = self._traverse(status, hideerror)'
+p215
+sI2123
+S'        status = self.assert_status(status, request_vars)'
+p216
+sI2124
+S'        if onvalidation:'
+p217
+sI2125
+S'            if isinstance(onvalidation, dict):'
+p218
+sI2126
+S"                onsuccess = onvalidation.get('onsuccess', None)"
+p219
+ssg83
+S"(self=<gluon.sqlhtml.SQLFORM object>, request_vars=<Storage {'interests': 'PS4', 'offers': 'xbox 36...'author': 'Andrew', '_formname': 'posts/create'}>, session=<Storage {'_formkey[posts/create]': ['768d6a8a-7...ate]': ['370d231f-a463-4f12-a43d-67ac09e26bb1']}>, formname='posts/create', keepvalues=False, onvalidation=None, hideerror=False, **kwargs={})"
+p220
+sg85
+g197
+sa(dp221
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py'
+p222
+sg64
+(dp223
+S'status'
+p224
+g202
+sS'newstatus'
+p225
+g202
+sS'c'
+S'<gluon.html.CAT object>'
+p226
+sS'hideerror'
+p227
+g208
+sS'c._traverse'
+p228
+S'<bound method CAT._traverse of <gluon.html.CAT object>>'
+p229
+ssg70
+I888
+sg71
+(dp230
+I883
+S'                c.latest = self.latest'
+p231
+sI884
+S'                c.session = self.session'
+p232
+sI885
+S'                c.formname = self.formname'
+p233
+sI886
+S"                if not c.attributes.get('hideerror'):"
+p234
+sI887
+S"                    c['hideerror'] = hideerror or self.attributes.get('hideerror')"
+p235
+sI888
+S'                newstatus = c._traverse(status, hideerror) and newstatus'
+p236
+sI889
+S''
+sI890
+S'        # for input, textarea, select, option'
+p237
+sI891
+S"        # deal with 'value' and 'validation'"
+p238
+sI892
+S''
+ssg83
+S'(self=<gluon.sqlhtml.SQLFORM object>, status=True, hideerror=False)'
+p239
+sg85
+S'_traverse'
+p240
+sa(dp241
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py'
+p242
+sg64
+(dp243
+S'status'
+p244
+g202
+sS'newstatus'
+p245
+g202
+sS'c'
+S'<gluon.html.DIV object>'
+p246
+sS'hideerror'
+p247
+g208
+sS'c._traverse'
+p248
+S'<bound method DIV._traverse of <gluon.html.DIV object>>'
+p249
+ssg70
+I888
+sg71
+(dp250
+I883
+S'                c.latest = self.latest'
+p251
+sI884
+S'                c.session = self.session'
+p252
+sI885
+S'                c.formname = self.formname'
+p253
+sI886
+S"                if not c.attributes.get('hideerror'):"
+p254
+sI887
+S"                    c['hideerror'] = hideerror or self.attributes.get('hideerror')"
+p255
+sI888
+S'                newstatus = c._traverse(status, hideerror) and newstatus'
+p256
+sI889
+S''
+sI890
+S'        # for input, textarea, select, option'
+p257
+sI891
+S"        # deal with 'value' and 'validation'"
+p258
+sI892
+S''
+ssg83
+S'(self=<gluon.html.CAT object>, status=True, hideerror=False)'
+p259
+sg85
+g240
+sa(dp260
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py'
+p261
+sg64
+(dp262
+S'status'
+p263
+g202
+sS'newstatus'
+p264
+g202
+sS'c'
+S'<gluon.html.DIV object>'
+p265
+sS'hideerror'
+p266
+g208
+sS'c._traverse'
+p267
+S'<bound method DIV._traverse of <gluon.html.DIV object>>'
+p268
+ssg70
+I888
+sg71
+(dp269
+I883
+S'                c.latest = self.latest'
+p270
+sI884
+S'                c.session = self.session'
+p271
+sI885
+S'                c.formname = self.formname'
+p272
+sI886
+S"                if not c.attributes.get('hideerror'):"
+p273
+sI887
+S"                    c['hideerror'] = hideerror or self.attributes.get('hideerror')"
+p274
+sI888
+S'                newstatus = c._traverse(status, hideerror) and newstatus'
+p275
+sI889
+S''
+sI890
+S'        # for input, textarea, select, option'
+p276
+sI891
+S"        # deal with 'value' and 'validation'"
+p277
+sI892
+S''
+ssg83
+S'(self=<gluon.html.DIV object>, status=True, hideerror=False)'
+p278
+sg85
+g240
+sa(dp279
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py'
+p280
+sg64
+(dp281
+S'status'
+p282
+g202
+sS'newstatus'
+p283
+g202
+sS'c'
+S'<gluon.html.INPUT object>'
+p284
+sS'hideerror'
+p285
+g208
+sS'c._traverse'
+p286
+S'<bound method INPUT._traverse of <gluon.html.INPUT object>>'
+p287
+ssg70
+I888
+sg71
+(dp288
+I883
+S'                c.latest = self.latest'
+p289
+sI884
+S'                c.session = self.session'
+p290
+sI885
+S'                c.formname = self.formname'
+p291
+sI886
+S"                if not c.attributes.get('hideerror'):"
+p292
+sI887
+S"                    c['hideerror'] = hideerror or self.attributes.get('hideerror')"
+p293
+sI888
+S'                newstatus = c._traverse(status, hideerror) and newstatus'
+p294
+sI889
+S''
+sI890
+S'        # for input, textarea, select, option'
+p295
+sI891
+S"        # deal with 'value' and 'validation'"
+p296
+sI892
+S''
+ssg83
+S'(self=<gluon.html.DIV object>, status=True, hideerror=False)'
+p297
+sg85
+g240
+sa(dp298
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py'
+p299
+sg64
+(dp300
+S'newstatus'
+p301
+g202
+sS'self'
+p302
+S'<gluon.html.INPUT object>'
+p303
+sS'self._validate'
+p304
+S'<bound method INPUT._validate of <gluon.html.INPUT object>>'
+p305
+ssg70
+I895
+sg71
+(dp306
+I896
+S'            self._postprocessing()'
+p307
+sI897
+S"        elif 'old_value' in self.attributes:"
+p308
+sI898
+S"            self['value'] = self['old_value']"
+p309
+sI899
+S'            self._postprocessing()'
+p310
+sI890
+S'        # for input, textarea, select, option'
+p311
+sI891
+S"        # deal with 'value' and 'validation'"
+p312
+sI892
+S''
+sI893
+S"        name = self['_name']"
+p313
+sI894
+S'        if newstatus:'
+p314
+sI895
+S'            newstatus = self._validate()'
+p315
+ssg83
+S'(self=<gluon.html.INPUT object>, status=True, hideerror=False)'
+p316
+sg85
+g240
+sa(dp317
+g62
+S'C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py'
+p318
+sg64
+(dp319
+S'builtinException'
+p320
+S"<type 'exceptions.Exception'>"
+p321
+sS'msg'
+p322
+S'"Validation error, field:title <class \'gluon.validators.IS_NOT_EMPTY\'>"'
+p323
+ssg70
+I1863
+sg71
+(dp324
+I1858
+S'            for k, validator in enumerate(requires):'
+p325
+sI1859
+S'                try:'
+p326
+sI1860
+S'                    (value, errors) = validator(value)'
+p327
+sI1861
+S'                except:'
+p328
+sI1862
+S'                    msg = "Validation error, field:%s %s" % (name,validator)'
+p329
+sI1863
+S'                    raise Exception(msg)'
+p330
+sI1864
+S'                if not errors is None:'
+p331
+sI1865
+S'                    self.vars[name] = value'
+p332
+sI1866
+S'                    self.errors[name] = errors'
+p333
+sI1867
+S'                    break'
+p334
+ssg83
+S'(self=<gluon.html.INPUT object>)'
+p335
+sg85
+S'_validate'
+p336
+sasS'pyver'
+p337
+S'Python 2.7.9: C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\web2py.exe (prefix: )'
+p338
+sS'session'
+p339
+g57
+(S's\x1a\x00\x00\x00<div><table></table></div>'
+tRp340
+sS'etype'
+p341
+S"<type 'exceptions.Exception'>"
+p342
+sS'date'
+p343
+S'Thu Jan 14 11:34:18 2016'
+p344
+sS'response'
+p345
+g57
+(S's\xa6A\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x0473C8A0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_trading_app</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-aa211cf1-e33e-4015-b5f2-019d7e4be332<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>bootstrap3_inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">google_analytics_id</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">logo</td><td style="vertical-align:top;">:</td><td><div><a class="navbar-brand" href="http://www.web2py.com/" id="web2py-logo"><b>Trading App</b>&trade;&nbsp;</a></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div><table><tr><td><div>Home</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/Trading_App/default/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Create Post</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/Trading_App/default/create</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Login</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/Trading_App/default/login</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>My Sites</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/site</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>This App</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Design</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/design/Trading_App</div></td></tr></table></div></td></tr><tr><td><div><li class="divider"></li></div></td></tr><tr><td><div><table><tr><td><div>Controller</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/Trading_App/controllers/default.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>View</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/Trading_App/views/default/create.html</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>DB Model</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/Trading_App/models/db.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Menu Model</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/Trading_App/models/menu.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Config.ini</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/Trading_App/private/appconfig.ini</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Layout</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/Trading_App/views/layout.html</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Stylesheet</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/Trading_App/static/css/web2py-bootstrap3.css</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Database</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/Trading_App/appadmin/index</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Errors</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/errors/Trading_App</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>About</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/about/Trading_App</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>web2py.com</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Download</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/download</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Support</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/support</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Demo</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/demo_admin</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Quick Examples</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/examples/default/examples</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>FAQ</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/AlterEgo</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Videos</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/videos/</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Free Applications</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/appliances</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Plugins</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/plugins</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2pyslices.com/</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Documentation</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Online book</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book</div></td></tr></table></div></td></tr><tr><td><div><li class="divider"></li></div></td></tr><tr><td><div><table><tr><td><div>Preface</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/00</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Introduction</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/01</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Python</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/02</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Overview</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/03</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>The Core</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/04</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>The Views</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/05</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Database</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/06</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Forms and Validators</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/07</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Email and SMS</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/08</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Access Control</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/09</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Services</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/10</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Ajax Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/11</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Components and Plugins</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/12</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Deployment Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/13</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Other Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/14</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Helping web2py</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/15</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Buy web2py\'s book</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://stores.lulu.com/web2py</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Community</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>None</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Groups</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/usergroups</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Twitter</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://twitter.com/web2py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Live Chat</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://webchat.freenode.net/?channels=web2py</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">author</td><td style="vertical-align:top;">:</td><td><div>Your Name &lt;you@example.com&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">description</td><td style="vertical-align:top;">:</td><td><div>a cool new app</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generator</td><td style="vertical-align:top;">:</td><td><div>Web2py Web Framework</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">keywords</td><td style="vertical-align:top;">:</td><td><div>web2py, python, framework</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/create/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_key</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_trading_app</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;C:\\\\Users\\\\Andrew\\\\Desktop\\\\web2py serv\\\\web2py\\\\applications\\\\Trading_App\\\\sessions\\\\1ed\\\\190\\\\127.0.0.1-aa211cf1-e33e-4015-b5f2-019d7e4be332&#x27;, mode &#x27;rb+&#x27; at 0x089DE548&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\applications\\Trading_App\\sessions\\127.0.0.1-aa211cf1-e33e-4015-b5f2-019d7e4be332</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>6e64cfb2a055727dc4a1912ffd7fcff5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-aa211cf1-e33e-4015-b5f2-019d7e4be332</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_trading_app</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>Trading_App</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">subtitle</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">title</td><td style="vertical-align:top;">:</td><td><div>Trading App</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>default/create.html</div></td></tr></table></div>'
+tRp346
+sS'locals'
+p347
+(dp348
+S'name'
+p349
+S"'title'"
+p350
+sS'self'
+p351
+S'<gluon.html.INPUT object>'
+p352
+sS'value'
+p353
+S"'Trading xbox/les paul for ps4'"
+p354
+sS'validator'
+p355
+S"<class 'gluon.validators.IS_NOT_EMPTY'>"
+p356
+sS'msg'
+p357
+S'"Validation error, field:title <class \'gluon.validators.IS_NOT_EMPTY\'>"'
+p358
+sS'request_vars_get'
+p359
+S'<built-in method get of Storage object>'
+p360
+sS'requires'
+p361
+S"[<class 'gluon.validators.IS_NOT_EMPTY'>]"
+p362
+sS'k'
+S'0'
+sssS'traceback'
+p363
+S'Traceback (most recent call last):\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\applications\\Trading_App\\controllers/default.py", line 73, in <module>\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\globals.py", line 412, in <lambda>\n    self._caller = lambda f: f()\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\applications\\Trading_App\\controllers/default.py", line 24, in create\n    form = SQLFORM(db.posts).process()\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py", line 2304, in process\n    self.validate(**kwargs)\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py", line 2241, in validate\n    if self.accepts(**kwargs):\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\sqlhtml.py", line 1505, in accepts\n    **kwargs\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py", line 2122, in accepts\n    status = self._traverse(status, hideerror)\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py", line 888, in _traverse\n    newstatus = c._traverse(status, hideerror) and newstatus\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py", line 888, in _traverse\n    newstatus = c._traverse(status, hideerror) and newstatus\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py", line 888, in _traverse\n    newstatus = c._traverse(status, hideerror) and newstatus\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py", line 888, in _traverse\n    newstatus = c._traverse(status, hideerror) and newstatus\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py", line 895, in _traverse\n    newstatus = self._validate()\n  File "C:\\Users\\Andrew\\Desktop\\web2py serv\\web2py\\gluon\\html.py", line 1863, in _validate\n    raise Exception(msg)\nException: Validation error, field:title <class \'gluon.validators.IS_NOT_EMPTY\'>\n'
+p364
+s.

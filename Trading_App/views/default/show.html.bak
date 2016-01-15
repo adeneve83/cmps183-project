@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+
+<h2>{{=post.author}}'s profile</h2>
+<i>Posted on {{=post.time_stamp}}</i>
+<br>
+<li>
+    <h4>
+        wants
+    </h4>
+{{=post.interests}}
+<br>
+    <h4>
+        offering
+    </h4>
+{{=post.offers}}
+</li>
